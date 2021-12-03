@@ -19,6 +19,6 @@ name_content = sorted(name_content, key = itemgetter(1))
 with open(new_file, 'w') as f:
     for line in name_content:
         wav_file = str(line[1]) + '.wav'
-        f.write('wavs/' + wav_file + '| ' + str(line[0]) + '.\n')
+        f.write('wavs/' + wav_file + '|' + str(line[0]) + '.\n')
 
 
