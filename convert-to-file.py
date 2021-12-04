@@ -1,5 +1,5 @@
 import os
-from operator import itemgetter
+#from operator import itemgetter
 
 folder_loc = str(input("enter pyTransciber output location (containing your .txt files): "))
 new_file = str(folder_loc) + "/combined.txt"
@@ -14,7 +14,7 @@ for filename in os.listdir(folder_loc):
         wav_file = str(os.path.splitext(filename)[0])
         name_content.append([str(new_line), wav_file])
 
-name_content = sorted(name_content, key = itemgetter(1))
+name_content = sorted(name_content, key = lambda name_content:int(name_content[1]))
 
 with open(new_file, 'w') as f:
     for line in name_content:
